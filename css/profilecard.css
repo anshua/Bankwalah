@@ -1,0 +1,21 @@
+.card {
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.4);
+	max-width: 300px;
+	margin: auto;
+	text-align: center;
+	font-family: arial;
+	padding: 20px;
+	background-color: tan;
+}
+
+.card-title {
+	color: grey;
+	font-size: 18px;
+}
+
+.card-image {
+	width: 100%;
+	border-radius: 10%;
+	max-width: 280px;
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.4);
+}

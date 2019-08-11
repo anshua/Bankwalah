@@ -1,0 +1,115 @@
+/*-------------------------------admin style starts------------------------------*/
+.topbanner-adm {
+	background-color: #1e90ff;
+}
+
+.mainfoot-adm{
+	background-color: #1e90ff;
+}
+
+.mainbody-adm {
+	background-color: #ffffff;
+}
+
+.mainside-adm {
+	background-color: palegreen;
+}
+/*-------------------------------admin style ends------------------------------*/
+
+
+/*-------------------------------manager style starts------------------------------*/
+.topbanner-mgr {
+	background-color: magenta;
+}
+
+.mainfoot-mgr {
+	background-color: magenta;
+}
+
+.mainbody-mgr {
+	background-color: #ffffff;
+}
+
+.mainside-mgr {
+	background-color: skyblue;
+}
+/*-------------------------------manager style ends------------------------------*/
+
+
+/*-------------------------------clerk style starts------------------------------*/
+.topbanner-clr {
+	background-color: tomato;
+}
+
+.mainfoot-clr {
+	background-color: tomato;
+}
+
+.mainbody-clr {
+	background-color: #ffffff;
+}
+
+.mainside-clr {
+	background-color: pink;
+}
+/*-------------------------------clerk style ends------------------------------*/
+
+
+/*-------------------------------client style starts------------------------------*/
+.topbanner-clt {
+	background-color: orchid;
+}
+
+.mainfoot-clt {
+	background-color: orchid;
+}
+
+.mainbody-clt {
+	background-color: #ffffff;
+}
+
+.mainside-clt {
+	background-color: peachpuff;
+}
+/*-------------------------------client style ends------------------------------*/
+
+
+/*-------------------------------blink class starts------------------------------*/
+.blink {
+	-webkit-animation: blink 2s linear infinite;
+	-moz-animation: blink 2s linear infinite;
+	-ms-animation: blink 2s linear infinite;
+	-o-animation: blink 2s linear infinite;
+	animation: blink 2s linear infinite;
+}
+@-webkit-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-o-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+/*-------------------------------blink class ends------------------------------*/

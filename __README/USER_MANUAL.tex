@@ -1,0 +1,218 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{blindtext}
+\usetikzlibrary{matrix,shapes,arrows,positioning,chains}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{array,multirow}
+\usepackage{array, makecell, rotating}
+\usepackage{geometry}
+\usepackage{amsmath,mathtools}
+\usepackage{array}
+\setcellgapes{2pt}
+\newcommand\nocell[1]{\multicolumn{#1}{c|}{}}
+\title{\textbf{BANKWALAH USER MANUAL \\
+Team Ransomware (IIT Bombay)}}
+\author{Ashish Chandra, Deepesh Meena, Anshu Ahirwar}
+\date{\small{\today}}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+\section{Bankwalah}
+\subsection{What is Bankwalah}
+Bankwalah is an open-source banking software to be used by banks to manage customers, employees, daily transactions, balance etc. The bankwalah is capable to store all the information that the banks need for their daily functioning. The easy and attractive user interface is very convenient and can be easily operated by any programming-nerd (one who does not know programming).
+
+\subsection{Employee Roles}
+The software has three levels of authorization. An employee at any branch will be given either of the three roles :
+ \begin{itemize}
+ \item Administrator (Shaktimaan)
+ \item Manager (Geeta)
+ \item Clerk (Gangadhar)
+ \end{itemize}
+
+\subsection{Powers of Administrator (Shaktimaan)}
+ \begin{itemize}
+ \item Create, Edit, Delete, View All Branches
+ \item Create, Edit, Delete, View Employees (of any branch)
+ \item Create, Edit, Delete, View Customers (of any branch)
+ \item Create, Edit, Delete, View Transactions (of any customer)
+ \item Transfer Money from any account to any other account (of any branch)
+ \item Although he is associated with a branch but he has powers to manage all branches and all activities of all customers.
+ \item There can be any number of Administrators and not just one.
+ \end{itemize}
+ 
+ 
+ \subsection{Powers of Manager (Geeta)}
+ \begin{itemize}
+ \item View All Branches
+ \item Create, Edit, Delete Employees (of his branch only). He can view Employees of all branches including his.
+ \item Create, Edit, Delete, View Customers (of his branch only)
+ \item Create, Edit, Delete, View Transactions (of any customer of his branch only)
+ \item Transfer Money from any account holder of his branch to any other account of same or other branch.
+ \item He is associated with a branch and his activities are mostly limited to his branch only (except only viewing all branch employees).
+ \item There can be any number of managers in a branch.
+ \end{itemize}
+ 
+ \subsection{Powers of Clerk (Gangadhar)}
+ \begin{itemize}
+ \item View All Branches
+ \item He can view Employees of all branches including his.
+ \item Create, Edit, Delete, View Customers (of his branch only)
+ \item Create, Edit, Delete, View Transactions (of any customer of his branch only)
+ \item Transfer Money from any account holder of his branch to any other account of same or other branch.
+ \item He is associated with a branch and his activities are mostly limited to his branch only (except only viewing all branch employees).
+ \item There can be any number of clerks in a branch.
+ \end{itemize}
+ \pagebreak
+
+\section{Languages used in this build}
+\subsection{Core Languages}
+\begin{itemize}
+ \item PHP
+ \item SQL
+ \item HTML
+ \item CSS
+ \item JavaScript
+\end{itemize}
+
+\subsection{Standard Libraries}
+\begin{itemize}
+ \item CSS Package : Bootstrap
+ \item JS Library : JQuery
+\end{itemize}
+
+\subsection{Third Party Scripts}
+\begin{itemize}
+ \item Datepicker (JQuery)
+\end{itemize}
+\pagebreak
+
+
+\section{Database and tables}
+\subsection{Database}
+\begin{itemize}
+ \item Database Name : bankwalah\_db
+\end{itemize}
+
+\subsection{Tables inside the Database}
+\begin{itemize}
+ \item branches
+ \item employees
+ \item customers
+ \item transactions
+\end{itemize}
+\pagebreak
+
+
+
+
+
+\section{How to install}
+\subsection{Prerequisites}
+To test the software you will need the following to run localhost :
+\begin{itemize}
+ \item PHP7 or above
+ \item MySQL Database Management System
+ \item Apache Server for Localhost
+ \item Any Web Browser. Firefox 56 or above is recommended.
+\end{itemize}
+To make your life easier, all of the above main 3 software are available in one package called EasyPHP Devserver. A free program to run localhost.
+
+\subsection{Installation Steps}
+\begin{enumerate}
+\item Uploading Files to Server
+  \begin{itemize}
+ \item Extract the zip file into your desktop or wherever. You will get two folders : bankwalah and phpmyadmin
+ \item Copy both the folders into your localhost server. (In my PC the full path is C:/Program Files/EasyPHP-Devserver-17/eds-www/
+  \end{itemize}
+
+
+\item Editing dbconfig.php
+  \begin{itemize}
+ \item Open the file : bankwalah/dbconfig.php in any text-editor of your choice.
+ \item Change the first 3 variables according to your localhost and database settings. Leave the 4th variable as it is.
+    \begin{verbatim}
+         $servername = "localhost";
+	        	$username = "root";
+	        	$password = "";
+	        	$dbname = "bankwalah_db";
+	\end{verbatim}
+ \item Save the file and exit the text editor.
+  \end{itemize}
+  
+  
+  
+ \item In the bankwalah folder, find the following two folders and provide chmod 777 permission to these two folders :
+    \begin{itemize}
+    \item img-employees
+    \item img-customers
+    \end{itemize}
+ 
+ \item Creating the Database and Tables inside the Database and Loading Sample Data
+ \begin{itemize}
+ \item Open in browser : http://localhost/phpmyadmin/
+ \item Use your root login and password for MySQL to login into PHPMyAdmin.
+ \item In the left sidebar panel click : New
+ \item Put Database name : bankwalah\_db
+ \item And click : Create
+ \item Now a new database called bankwalah\_db will be visible in the left sidebar panel.
+ \item Click bankwalah\_db in the left sidebar panel.
+ \item Then go to import and browse the file : bankwalah/\_\_README/BANKWALAH\_DB\_SAMPLEDATA.sql
+ \item Then at the bottom of the page click : Go
+ \item Now every setting is done. You can close PHPMyAdmin.
+ \end{itemize}
+ \end{enumerate}
+ \pagebreak
+ 
+ \section{How to Run}
+ \subsection{Logging}
+ \begin{enumerate}
+ \item Open in browser : http://localhost/bankwalah/
+ \item Here are sample logins and passwords that you can use to enter the dashboard. Login and password can be changed in respective user profile.
+    \begin{itemize}
+    \item Administrator (Shaktimaan) : ashish ashish123
+    \item Manager (Geeta) : deepesh deepesh123
+    \item Clerk (Gangadhar) : anshu anshu123
+    \end{itemize}
+ \end{enumerate}
+ 
+ \subsection{Banking Actions}
+ \begin{enumerate}
+ \item Using the dashboard after login is very easy. It does not need any extra clarification. Start exploring the site and in short time you will find everything very easy and in place. You should first start with Administrator (Shaktimaan).
+ \item Actions to do as a trial in Administrator (Shaktimaan)
+    \begin{itemize}
+    \item Create a new branch
+    \item Create a new employee
+    \item Create a new customer
+    \item Deposit money to an account
+    \item Withdraw money from an account
+    \item Transfer money from one account to another
+    \end{itemize}
+ \end{enumerate}
+ 
+
+\pagebreak
+\section{References}
+\begin{enumerate}
+ \item PHP and MySQL Web Development, Luke Welling and Laura Thomson, Sams Publishing
+ \item SQL For Dummies, 8th Ed., Allen G. Taylor, Wiley Publishing
+ \item Database Development for Dummies, Allen G. Taylor, Wiley Publishing
+ \item http://www.w3schools.com
+ \item http://php.net
+ \item http://searchdatamanagement.techtarget.com/answer/Definition-of-primary-super-foreign-and-candidate-key-in-the-DBMS
+ \item https://stackoverflow.com/questions/12394506/mysql-update-table-based-on-another-tables-value
+ \item https://www.tutorialspoint.com/php/php\_mysql\_login.htm
+ \item https://www.ricocheting.com/code/javascript/html-generator/date-time-clock
+ \item https://stackoverflow.com/questions/10033020/using-inner-join-twice-in-the-same-query
+ \item And many more online tutorials from various sources.
+\end{enumerate}
+---------------------------------------------- \textbf{THANK YOU} ----------------------------------------------
+\end{document}

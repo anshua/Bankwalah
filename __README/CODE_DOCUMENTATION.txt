@@ -1,0 +1,4 @@
+Preparing a code documentation for a project as large as BANKWALAH is certainly very difficult process.
+And we feared while altering such large number of files, we might make the whole site unstable if we do some silly mistake.
+
+However inside codes, there are certainly sufficient amount of comments to help programmers understand the code.

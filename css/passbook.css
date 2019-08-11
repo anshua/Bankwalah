@@ -1,0 +1,25 @@
+.picsig {
+	max-width: 200px;
+	max-height: 150px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	border: 1px solid black;
+}
+
+.picsigsmall {
+	max-width: 100px;
+	max-height: 75px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	border: 1px solid black;
+}
+
+.picsigfixedwidth {
+	max-width: 150px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	border: 1px solid black;
+}
+
+@media print {
+	body {
+		font-size: 10px;
+	}
+}

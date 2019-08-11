@@ -1,0 +1,84 @@
+CREATE DATABASE bankwalah_db;
+
+CREATE TABLE branches (
+	BrID int NOT NULL AUTO_INCREMENT,
+	BrLoc varchar(255) NOT NULL,
+	BrIFSC varchar(20) NOT NULL,
+	BrOpenDate date NOT NULL,
+	BrPhone varchar(20),
+	BrEmail varchar(255),
+	UNIQUE (BrID),
+	UNIQUE (BrIFSC),
+	PRIMARY KEY (BrID)
+);
+
+CREATE TABLE employees (
+	EmpID int NOT NULL AUTO_INCREMENT,
+	EmpName varchar(255) NOT NULL,
+	EmpFName varchar(255) NOT NULL,
+	EmpMName varchar(255),
+	EmpDOB date NOT NULL,
+	EmpJoinDate date NOT NULL,
+	EmpSex varchar(20) NOT NULL,
+	EmpLAdd varchar(255) NOT NULL,
+	EmpPAdd varchar(255),
+	EmpPhone varchar(20),
+	EmpEmail varchar(255),
+	EmpPAN varchar(20),
+	EmpAadhaar varchar(20),
+	EmpBrID int NOT NULL,
+	EmpRole varchar(20) NOT NULL,
+	EmpLogin varchar(20) NOT NULL,
+	EmpPass varchar(20) NOT NULL,
+	UNIQUE (EmpID),
+	UNIQUE (EmpPAN),
+	UNIQUE (EmpAadhaar),
+	UNIQUE (EmpLogin),
+	PRIMARY KEY (EmpID),
+	FOREIGN KEY (EmpBrID) REFERENCES branches(BrID)
+);
+
+CREATE TABLE customers (
+	CustID int NOT NULL AUTO_INCREMENT,
+	CustName varchar(255) NOT NULL,
+	CustFName varchar(255) NOT NULL,
+	CustMName varchar(255),
+	CustDOB date NOT NULL,
+	CustJoinDate date NOT NULL,
+	CustSex varchar(20) NOT NULL,
+	CustLAdd varchar(255) NOT NULL,
+	CustPAdd varchar(255),
+	CustPhone varchar(20),
+	CustEmail varchar(255),
+	CustPAN varchar(20),
+	CustAadhaar varchar(20),
+	CustBrID int NOT NULL,
+	CustACType varchar(20) NOT NULL,
+	CustCurrBal double(18,2) NOT NULL,
+	CustLog text,
+	CustLogin varchar(20),
+	CustPass varchar(20),
+	CustNetBank varchar(20),
+	UNIQUE (CustID),
+	UNIQUE (CustLogin),
+	PRIMARY KEY (CustID),
+	FOREIGN KEY (CustBrID) REFERENCES branches(BrID)
+);
+
+CREATE TABLE transactions (
+	TrID int NOT NULL AUTO_INCREMENT,
+	TrDateTime datetime NOT NULL,
+	TrRemarks varchar(255),
+	TrCustID int NOT NULL,
+	TrEmpID int NOT NULL,
+	TrAmount double(18,2) NOT NULL,
+	UNIQUE (TrID),
+	PRIMARY KEY (TrID),
+	FOREIGN KEY (TrCustID) REFERENCES costomers(CustID),
+	FOREIGN KEY (TrEmpID) REFERENCES employees(EmpID)
+);
+
+INSERT INTO employees (BrID, BrLoc, BrIFSC, BrOpenDate, BrPhone, BrEmail) VALUES ('1', 'Powai Mumbai', 'BKWL0001001', '2017-10-02', '022-45121255', 'iambankwalah@dummy.com');
+
+INSERT INTO employees (EmpID, EmpName, EmpFName, EmpMName, EmpDOB, EmpJoinDate, EmpSex, EmpLAdd, EmpPAdd, EmpPhone, EmpEmail, EmpPAN, EmpAadhaar, EmpBrID, EmpRole, EmpLogin, EmpPass) VALUES ('1', 'Bankwalah', 'RANSOMWARE', 'IIT BOMBAY', '2017-10-02', '2017-10-02', 'Male', 'Mumbai 400076', 'CSE IIT Bombay', '022-8734894120', 'bankwalah@iitb.ac.in', 'AKJHG4567Z', '900080002222', '1', 'Administrator', 'bankwalah', 'bankwalah123');
+
